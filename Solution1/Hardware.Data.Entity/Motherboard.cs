@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Hardware.Data.Abstract;
 
 namespace Hardware.Data.Entity
 {
-    public class Motherboard:Bool
+    public class Motherboard:BoolEntity
     {
         public int ManufacturerId { get; set; }
         public virtual Manufacturer Manufacturer { get; set; }
@@ -16,7 +17,11 @@ namespace Hardware.Data.Entity
         public int FormFactorId { get; set; }
         public virtual FormFactor FormFactor { get; set; }
         public int MemoryMaxId { get; set; }
-        public virtual MemoryMax MemoryMax { get; set; }
+        [ForeignKey("MemoryMax")]
+        public virtual Numbers MemoryMax { get; set; }
+        public int MemorySlotId { get; set; }
+        [ForeignKey("MemorySlotId")]
+        public virtual Numbers MemorySlot { get; set; }
         public virtual MemoryType MemoryType { get; set; }
         public virtual ICollection<MemorySpeed> MemorySpeeds { get; set; }
     }
