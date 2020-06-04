@@ -13,9 +13,11 @@ namespace Hardware.Data.Entity
         public virtual CoreSeries CoreSeries { get; set; }
         public int CoreSpeedId { get; set; }
         public virtual CoreSpeed CoreSpeed { get; set; }
+       
         public int CoreCountId { get; set; }
         [ForeignKey("CoreCountId")]
         public virtual Numbers CoreCount { get; set; }
+        
         public int VoltageId { get; set; }
         [ForeignKey("VoltageId")]
         public virtual Numbers Voltage { get; set; }

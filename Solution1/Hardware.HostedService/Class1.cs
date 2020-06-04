@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hardware.Data.Interface
+namespace Hardware.HostedService
 {
     public class Class1
     {

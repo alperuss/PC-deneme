@@ -1,0 +1,3 @@
+﻿add-migration ADI -Context "DataContext" -StartupProject "Hardware.API" -Project "Hardware.Data.Migration"
+update-database -Context "DataContext" -StartupProject "WordResume.API" -Project "WordResume.Data.Migration"
+remove-migration -Context "DataContext" -StartupProject "WordResume.API" -Project "WordResume.Data.Migration"
